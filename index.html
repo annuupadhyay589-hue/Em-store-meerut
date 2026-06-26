@@ -1,0 +1,1272 @@
+<!DOCTYPE html>  <html>  
+  <head>  
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM Store</title>
+    <style>  
+    html,body{  
+      margin:0;
+      height:100%;  
+      width:100%;  
+      background:black; 
+      overflow-x: hidden;
+      scroll-behavior:smooth;
+    
+    }  
+    *{
+  box-sizing: border-box;
+}
+ @media (max-width:2000px){  *{  
+    font-family: Arial;  
+   }  
+   .container{  
+     min-height:80vh;
+     width:100%;  
+     background-image:url("mainbg.jpg");  
+     border-bottom:solid 3px gold;
+     background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+       
+   }  
+   .navbar{  
+     display:flex;  
+     height:50px;  
+     width:100%;  
+     align-items:center;  
+     justify-content: space-between;
+     padding: 0 11px;
+   }  
+     
+   .logo h1{  
+     margin:0;  
+     width:150px;  
+     color:#d5c103;  
+     text-shadow:0 0 20px yello
+     
+       }  
+   .center{  
+     display:flex;  
+     align-items: center;  
+     justify-content: left;  
+     
+      }  
+   .heading{  
+     margin-top:30%;  
+       }  
+   .h2{  
+      margin:0;  
+      font-size:60px;  
+      color:#d5c103;  
+      text-shadow:0 0 20px yello
+      font-family: 'Ethnocentric', 'Orbitron', sans-serif;
+      font-style:italic;
+      filter: contrast(1.15) brightness(1.05);
+   word-wrap:break-word;
+
+      }  
+   .h3{  
+     margin:2px 0;  
+     color:#d5c103;  
+     text-shadow:0 0 20px #8e005
+     font-size:35px;  
+     word-wrap:break-word;
+   }  
+   .h4{  
+     margin:5px 0;  
+     font-size:18px;  
+     color:white;  
+     text-shadow:0 0 20px whit
+     word-wrap:break-word;
+   }  
+   .button{  
+     height:40px;  
+     width:auto;  
+     display:flex;  
+     
+     }  
+.b1{
+  width:57px;
+  min-height:44px;
+  padding:6px 10px;
+  font-size:12px;
+  margin-right:8px;
+  cursor:pointer;
+  border-radius:30px;
+  background:#efc000;
+  color:black;
+  font-weight:bold;
+  border:none;
+}
+
+        /* anchor ko button jaisa banao */
+.nav-link{
+  text-decoration:none;   /* underline hatane ke liye */
+  display:flex;           /* button jaisa behave */
+  align-items:center;
+  justify-content:center;
+}
+   .shop{  
+    display:block;  
+    margin-top:5px; 
+    margin-top:50px;  
+    font-size:30px;  
+    padding:10px;  
+    border-radius:30px;  
+    background:#d5c103;  
+    color:black;  
+    text-shadow:0 0 20px white
+    cursor: pointer;  
+    font-weight:bold;
+    min-height:44px;
+     }  
+     .h6{  
+       color:white;  
+         
+     }  
+     .yellow{  
+       color:#d5c103;  
+     }  
+     .boxes{  
+       display:flex;  
+       gap:15px;  
+       overflow-x:auto;  
+       scroll-snap-type:x mandatory;  
+       padding-bottom:10px;  
+       -webkit-overflow-scrolling: touch;
+       
+         
+     }  
+     .boxes::-webkit-scrollbar{  
+       display:none;  
+       
+     }  
+     .box1{  
+       max-width:220px;  
+       min-width:220px;  
+    background:
+  linear-gradient(black, black) padding-box,
+  linear-gradient( black , black) border-box;
+       border-radius:16px;  
+       padding:10px;  
+       scroll-snap-align:start; 
+       border: 3px solid transparent;
+       box-shadow:0 10px 25px rgba(0,0,0,0.15);
+       transition:0.3s;
+       border:solid 1px gold;
+}
+
+.box1:hover{
+  transform:translateY(5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+     }  
+     .box1 img{  
+       width:100%;  
+       height:300px;  
+       object-fit: cover;  
+       border-radius:12px;  
+     }  
+     .box1 h2{
+
+margin:8px 0 4px;
+color:white;
+
+}
+
+.box1 span{
+color:white;
+font-weight:bold;
+
+}
+footer{
+  padding: 15px;
+}
+.qty-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+}
+
+.qty-box button{
+  width:30px;
+  height:30px;
+  border:none;
+  border-radius:50%;
+  background:gold;
+  color:black;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.qty{
+  color:white;
+  font-weight:bold;
+}
+
+.add-cart{
+  width:100%;
+  margin-top:10px;
+  padding:8px 0;
+  border:none;
+  border-radius:20px;
+  background:gold;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  min-height:44px;
+}
+
+
+.wrapper{
+  margin:0 auto;
+  width:100%;
+  max-width:420px;
+  padding:20px;
+}
+
+.card{
+  background:#050505;
+  border-radius:22px;
+  padding:28px 24px;
+  margin-bottom:28px;
+  border:2px solid #f5c400;
+  box-shadow:
+    0 0 15px rgba(245,196,0,0.5),
+    inset 0 0 12px rgba(245,196,0,0.25);
+}
+
+.card ul{
+  list-style:none;
+}
+
+.card ul li{
+  color:#f5c400;
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:18px;
+  position:relative;
+  padding-left:28px;
+}
+
+.card ul li::before{
+  content:"➤";
+  position:absolute;
+  left:0;
+  color:#f5c400;
+}
+.players-section{
+  padding:50px 20px;
+  background:#000;
+  text-align:center;
+}
+
+.section-title{
+  color:#f5c400;
+  font-size:28px;
+  margin-bottom:35px;
+}
+
+.players{
+  display:flex;
+  gap:25px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+@media(max-width:2000px){
+/* Player Card */
+.player-card{
+  width:100%;
+  background:#060606;
+  border:2px solid #f5c400;
+  border-radius:20px;
+  padding:25px 20px;
+  box-shadow:0 0 18px rgba(245,196,0,0.5);
+}
+
+/* Player Photo */
+.player-card img{
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #f5c400;
+  margin-bottom:12px;
+}
+}
+
+/* Player Name */
+.player-card h3{
+  color:#fff;
+  margin-bottom:6px;
+  font-size:30px;
+}
+
+/* ⭐ Stars */
+.stars{
+  color:#f5c400;
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+/* Highlights */
+.player-card ul{
+  list-style:none;
+  padding:0;
+}
+
+.player-card li{
+  color:#f5c400;
+  font-size:20px;
+  font-weight: bold;
+  margin-bottom:6px;
+}
+.footer{
+  background:#000;
+  color:#fff;
+  border-top:3px solid #f5c400;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN GRID */
+.footer-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  padding:50px 40px;
+}
+
+/* BOX */
+.footer-box h3{
+  color:#f5c400;
+  margin-bottom:15px;
+}
+
+.footer-box ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-box ul li{
+  margin-bottom:10px;
+  color:#ccc;
+  cursor:pointer;
+}
+
+.footer-box ul li:hover{
+  color:#f5c400;
+}
+
+/* BRAND */
+.brand{
+  font-size:32px;
+  color:#f5c400;
+}
+
+.brand span{
+  color:#fff;
+}
+
+.tagline{
+  font-size:14px;
+  color:#ccc;
+  margin:15px 0;
+}
+
+/* SOCIAL ICONS */
+.social-icons a{
+  display:inline-block;
+  margin-right:10px;
+  background:#111;
+  color:#f5c400;
+  padding:8px 10px;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 0 10px rgba(245,196,0,0.5);
+}
+
+/* BOTTOM BAR */
+.footer-bottom{
+  background:#f5c400;
+  color:#000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  flex-wrap:wrap;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+}
+
+.footer-bottom p{
+  margin:0;
+  font-weight:500;
+}
+
+.bottom-links span{
+  margin-left:10px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:2000px){
+  .footer-container{
+    padding:30px 20px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:8px;
+    text-align:center;
+  }
+  .size-box{
+  margin-top:10px;
+}
+
+.size-title{
+  color:white;
+  font-size:14px;
+  display:block;
+  margin-bottom:6px;
+}
+
+.sizes{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.sizes button{
+  padding:6px 10px;
+  border-radius:20px;
+  border:1px solid gold;
+  background:black;
+  color:gold;
+  font-size:12px;
+  cursor:pointer;
+  min-height:36px;
+}
+
+.sizes button.active{
+  background:gold;
+  color:black;
+  font-weight:bold;
+}
+#viewCartBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: gold;
+  border:2px solid gold;
+  padding: 12px 18px;
+  border-radius: 30px;
+  z-index: 9999;
+  font-weight:bold;
+}
+
+#cartModal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 9998;
+}
+
+.cart-box{
+  background: #111;
+  margin: 80px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  color: white;
+}
+/* CART MODAL BACKDROP */
+#cartModal{
+  position: fixed;
+  inset: 0;
+  background: black;
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 9998;
+}
+
+/* CART BOX */
+.cart-box{
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  color: white;
+  width: 92%;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid gold;
+  box-shadow: 0 0 25px rgba(255,215,0,0.25);
+}
+
+/* HEADING */
+.cart-box h3{
+  text-align: center;
+  color: gold;
+  margin-bottom: 15px;
+}
+
+/* CART ITEM */
+.cart-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  
+}
+
+/* REMOVE BTN */
+.cart-item button{
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+/* CLOSE BUTTON */
+.cart-close{
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: gold;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+#productModal{
+  position:fixed;
+  inset:0;
+  background:black;
+  backdrop-filter:blur(6px);
+  display:none;
+  z-index:10000;
+}
+
+.modal-box{
+  background:linear-gradient(145deg,#0c0c0c,#1a1a1a);
+  width:90%;
+  max-width:380px;
+  margin:120px auto;
+  padding:22px;
+  border-radius:22px;
+  border:2px solid gold;
+  box-shadow:0 0 30px rgba(255,215,0,0.4);
+  text-align:center;
+  color:white;
+}
+
+.modal-box h3{
+  color:gold;
+  margin-bottom:15px;
+}
+
+.modal-box .sizes{
+  justify-content:center;
+  margin-bottom:15px;
+}
+}
+
+       
+    
+</style>
+
+  </head>  
+  <body>  
+      <header>  
+        <div class="container">  
+          <div class="navbar">  <div class="logo">  
+        <h1 class="em">EM</h1>  
+      </div>  
+      <div class="button">  
+        <button class="b1">Home</button>  
+   <a href="#Bats" class="b1 nav-link">Bats</a>
+      <a href="#about" class="b1 nav-link">About</a>
+              <button class="b1">Help</button>  
+      </div>  
+                </div>  
+      <div class="center">  
+        <div class="heading">  
+        <h1 class="h2">EM Store</h1>  
+         <h3 class="h3">Sports City Meerut</h3>  
+          <h4 class="h4">Premium Look Bats<br>Fresh And Perfect Willow</h4>  
+          </div>  
+          <div class="p1">  
+              
+          </div>  
+      </div>  
+     <button class="shop" onclick="sendToWhatsApp()">
+  Shop now ➤
+</button>
+    </div>  
+  </header>  
+  <footer>  
+    <h1 class="h6">Cricket <span class="yellow">Bat  ➤</span> </h1>  
+    <div class="boxes" id="Bats">  
+             <div class="box1">  
+        <img src="bold.jpg">  
+            <h2 class="price">MRP-</h2>  
+            <span>$29049</span>  
+              <!-- QUANTITY -->
+  <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+<button class="add-cart" onclick="openProductModal(
+ 'Playburst English Willow Bat',
+ [
+  {size:'MRH',price:41819},
+  {size:'YRH',price:39819},
+  {size:'BRH',price:43500}
+ ]
+)">
+Add to Cart
+</button>
+      </div>  
+          <div class="box1">  
+                <img src="playburst.jpg">  
+                    <h2 class="price">MRP-</h2>  
+                                    <span>$41819</span>    <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+<button class="add-cart"
+onclick="addToCart(this, 'Playburst English Willow Bat', 41819)">
+Add to Cart
+</button>
+          </div>  
+          <div class="box1">  
+                      <img src="bullring.jpg">  
+                      <h2 class="price">MRP-</h2>  
+                                <span>$52619</span>
+                                  <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+
+<button class="add-cart" onclick="openProductModal(
+ 'Playburst English Willow Bat',
+ [
+  { size:'SNR', price:41819 },
+  { size:'HARROW', price:39819 },
+  { size:'6.NO', price:43500 },
+  { size:'5.NO',  price:45500 },
+  { size:'4.NO',  price:47000 }
+ ]
+)">
+Add to Cart
+</button>
+          </div>  
+         <div class="box1">  
+                    <img src="17.jpg">  
+                        <h2 class="price">MRP-</h2>  
+                                        <span>$85499</span>  
+                                          <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, 'EW 360 Number 17', 85499)">
+    Add to Cart
+  </button>
+         </div>  
+        <div class="box1">  
+           <img src="legacy.jpg">  
+           <h2 class="price">MRP-</h2>  
+                           <span>$20849</span>  
+                             <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, 'EW 360 Legacy', 20849)">
+    Add to Cart
+  </button>
+  
+        </div>  
+   </div>  
+<h1 class="h6">Cricket <span class="yellow">Gloves ➤</span></h1>
+
+<div class="boxes">
+  <div class="box1">
+    <img src="bold1.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$3239</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Bold Batting Gloves', 3239)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="playburst1.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$3599</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Playburst Batting Gloves', 4899)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="bullring1.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$5099</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Bull ring Batting Gloves', 5099)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="171.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$5499</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Number 17 Batting Gloves', 5499)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="legacy1.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$2739</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Legacy Batting Gloves',2999)">
+    Add to Cart
+  </button>
+  </div>
+</div>
+<h1 class="h6">Cricket <span class="yellow">Legguard ➤</span></h1>
+
+<div class="boxes">
+  <div class="box1">
+    <img src="bold2.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$3239</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Bold Batting pad ',3239)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="playburst2.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$3599</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Playburst Batting pad', 4899)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="bullring2.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$5099</span>
+      <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Bull Ring Batting Pad', 5299)">
+    Add to Cart
+  </button>
+  </div>
+
+  <div class="box1">
+    <img src="172.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$5499</span>
+        <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Number 17 Batting Pad', 5499)">
+    Add to Cart
+  </button>
+  </div>
+
+
+  <div class="box1">
+    <img src="legacy2.jpg">
+    <h2 class="price">MRP-</h2>
+    <span>$2739</span>
+    <!-- SIZE SELECTOR -->
+<div class="size-box">
+  <span class="size-title">Select Size</span>
+<div class="sizes">
+  <button onclick="selectSize(this)" data-price="2399">MRH</button>
+  <button onclick="selectSize(this)" data-price="2199">YRH</button>
+  <button onclick="selectSize(this)" data-price="2599">BRH</button>
+  <button onclick="selectSize(this)" data-price="2799">MLH<small>-₹2599</small></button>
+  <button onclick="selectSize(this)" data-price="2299">YLH</button>
+  <button onclick="selectSize(this)" data-price="2699">BLH</button>
+</div>
+</div>
+        <div class="qty-box">
+    <button onclick="changeQty(this, -1)">−</button>
+    <span class="qty">0</span>
+    <button onclick="changeQty(this, 1)">+</button>
+  </div>
+
+  <!-- ADD TO CART -->
+  <button class="add-cart"
+    onclick="addToCart(this, '360 Legacy batting pad ', 2399)">
+    Add to Cart
+  </button>
+  </div>
+
+</div>
+<div class="wrapper">
+
+  <!-- Card 1 -->
+  <div class="card">
+    <ul>
+      <li>Bats Quality</li>
+      <li>Premium Look</li>
+      <li>Fresh Willow</li>
+      <li>Good Weight</li>
+      <li>Perfect Balance</li>
+      <li>Pressed Bats</li>
+    </ul>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card" id="about">
+    <ul>
+      <li>About</li>
+      <li>Vallabh Sports Industries</li>
+      <li>Shop No-1, Hanuman Puri</li>
+      <li>Suraj Kund Road, Sports City</li>
+      <li>Meerut</li>
+      <li>Contact: 9193651121</li>
+      <li>emstore@gmail.com</li>
+    </ul>
+  </div>
+
+</div>
+<section class="players-section">
+
+  <h2 class="section-title">Our Star Players</h2>
+
+  <div class="players">
+
+    <!-- Player Card -->
+    <div class="player-card">
+      <img src="player1.jpg" alt="Player Name">
+      <h3>AB de villers</h3>
+
+      <!-- ⭐ Rating -->
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <!-- 🏏 Highlights -->
+      <ul>
+        <li>Power Hitter</li>
+        <li>Perfect Balance Bat</li>
+        <li>Match Finisher</li>
+      </ul>
+    </div>
+
+    <!-- Player Card -->
+    <div class="player-card">
+      <img src="player2.jpg" alt="Player Name">
+      <h3>Sai Sudarshan</h3>
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <ul>
+        <li>Consistent Performer</li>
+        <li>Strong Timing</li>
+        <li>Professional Choice</li>
+      </ul>
+       </div>
+          <div class="player-card">
+      <img src="player3.jpg" alt="Player Name">
+      <h3>MS Dhoni</h3>
+
+      <!-- ⭐ Rating -->
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <!-- 🏏 Highlights -->
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <!-- 🏏 Highlights -->
+      <ul>
+        <li>Professionally Pressed & Tested</li>
+        <li>Long-lasting Durability & Finish</li>
+        <li>Premium English / Kashmir Willow</li>
+      </ul>
+    </div>
+    </div>
+
+ 
+
+</section>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+      <h2 class="brand">EM <span>SPORTS</span></h2>
+      <p class="tagline">
+        Crafting excellence, delivering performance.<br>
+        EM Sports – Built for Champions.
+      </p>
+
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📸</a>
+        <a href="#">▶️</a>
+        <a href="#">💬</a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Collection</li>
+        <li>Features</li>
+        <li>Gallery</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="footer-box">
+      <h3>Our Products</h3>
+      <ul>
+        <li>Perfect and Selected Bats</li>
+        <li>Cricket Gloves With Extra Comfort</li>
+        <li>Thigh guard For Leg Protection</li>
+        <li>Abdo guard </li>
+        <li>Big and Best kit bag</li>
+        <li>Elbow guard For Arm Protection</li>
+        <li>Battinh pad</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>📍 Shop No-1, Hanuman Puri<br>
+         Suraj Kund Road, Sports City<br>
+         Meerut, Uttar Pradesh
+      </p>
+      <p>📞 +91 9365111211</p>
+      <p>✉️ emstore@gmail.com</p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2024 EM Sports. All Rights Reserved.</p>
+    <div class="bottom-links">
+      <span>Privacy Policy</span>
+      <span>|</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+
+</footer>
+       </footer>
+       <!-- 🔥 VIEW CART BUTTON -->
+<button id="viewCartBtn" onclick="openCart()">
+  🛒 View Cart (<span id="cartCount">0</span>)
+</button>
+<!-- 🔥 CART MODAL -->
+<div id="cartModal">
+  <div class="cart-box">
+    <h3>🛒 Your Cart</h3>
+    <div id="cartItems"></div>
+    <button class="cart-close" onclick="closeCart()">Close</button>
+  </div>
+</div>
+<!-- 🛒 ADD TO CART MODAL -->
+<div id="productModal">
+  <div class="modal-box">
+    <h3 id="modalTitle">Product</h3>
+
+    <!-- SIZE -->
+    <div id="modalSizes" class="sizes"></div>
+
+    <!-- QTY -->
+    <div class="qty-box">
+      <button onclick="modalQty(-1)">−</button>
+      <span id="modalQty">1</span>
+      <button onclick="modalQty(1)">+</button>
+    </div>
+
+    <!-- ACTIONS -->
+    <button class="add-cart" onclick="confirmAddToCart()">Add to Cart</button>
+    <button class="cart-close" onclick="closeProductModal()">Cancel</button>
+  </div>
+</div>
+
+<h2>Products</h2>
+<div id="products"></div>
+
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let selectedProduct = { name:"", price:0, size:"" };
+let modalQuantity = 1;
+
+/* ---------------- OPEN MODAL ---------------- */
+function openProductModal(name, sizes=[]){
+  selectedProduct = { name, price:0, size:"" };
+  modalQuantity = 1;
+
+  document.getElementById("modalTitle").innerText = name;
+  document.getElementById("modalQty").innerText = modalQuantity;
+
+  let box = document.getElementById("modalSizes");
+  box.innerHTML = "";
+
+  sizes.forEach(s=>{
+    let btn = document.createElement("button");
+    btn.innerHTML = `${s.size} <small>₹${s.price}</small>`;
+    btn.onclick = ()=>selectModalSize(btn,s);
+    box.appendChild(btn);
+  });
+
+  document.getElementById("productModal").style.display="block";
+}
+
+/* ---------------- SIZE SELECT ---------------- */
+function selectModalSize(btn,s){
+  document.querySelectorAll("#modalSizes button")
+    .forEach(b=>b.classList.remove("active"));
+
+  btn.classList.add("active");
+  selectedProduct.size = s.size;
+  selectedProduct.price = s.price;
+
+  modalQuantity = 1;
+  document.getElementById("modalQty").innerText = modalQuantity;
+}
+
+/* ---------------- QTY ---------------- */
+function modalQty(v){
+  modalQuantity += v;
+  if(modalQuantity < 1) modalQuantity = 1;
+  document.getElementById("modalQty").innerText = modalQuantity;
+}
+
+/* ---------------- ADD TO CART ---------------- */
+function confirmAddToCart(){
+  if(!selectedProduct.size){
+    alert("Please select size");
+    return;
+  }
+
+  let name = `${selectedProduct.name} (${selectedProduct.size})`;
+
+  let item = cart.find(i=>i.name===name && i.price===selectedProduct.price);
+  if(item){
+    item.qty += modalQuantity;
+  } else {
+    cart.push({
+      name,
+      price:selectedProduct.price,
+      qty:modalQuantity
+    });
+  }
+
+  localStorage.setItem("cart",JSON.stringify(cart));
+  updateCartCount();
+  closeProductModal();
+}
+
+/* ---------------- CART ---------------- */
+function updateCartCount(){
+  document.getElementById("cartCount").innerText =
+    cart.reduce((t,i)=>t+i.qty,0);
+}
+
+function openCart(){
+  let box = document.getElementById("cartItems");
+  box.innerHTML = "";
+
+  if(cart.length===0){
+    box.innerHTML="<p style='text-align:center'>Cart is empty</p>";
+  }
+
+  cart.forEach((i,index)=>{
+    box.innerHTML+=`
+      <div class="cart-item">
+        <div>
+          <b>${i.name}</b><br>
+          Qty: ${i.qty} × ₹${i.price}
+        </div>
+        <button onclick="removeItem(${index})">✖</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("cartModal").style.display="block";
+}
+
+function removeItem(i){
+  cart.splice(i,1);
+  localStorage.setItem("cart",JSON.stringify(cart));
+  updateCartCount();
+  openCart();
+}
+
+function closeCart(){
+  document.getElementById("cartModal").style.display="none";
+}
+
+/* ---------------- WHATSAPP ORDER ---------------- */
+function sendWhatsAppOrder(){
+  if(cart.length===0){
+    alert("Cart empty");
+    return;
+  }
+
+  let msg = "🛒 *NEW ORDER - EM STORE*\n\n";
+  let total = 0;
+
+  cart.forEach((i,n)=>{
+    let sub = i.qty * i.price;
+    total += sub;
+    msg += `${n+1}. ${i.name}\nQty: ${i.qty} × ₹${i.price} = ₹${sub}\n\n`;
+  });
+
+  msg += `💰 *Total: ₹${total}*`;
+
+  let phone = "91XXXXXXXXXX"; // apna number
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+
+  cart = [];
+  localStorage.removeItem("cart");
+  updateCartCount();
+  closeCart();
+}
+
+/* ---------------- MODAL CLOSE ---------------- */
+function closeProductModal(){
+  document.getElementById("productModal").style.display="none";
+}
+
+/* PAGE LOAD */
+updateCartCount();
+const API = "https://em-store-meerut.onrender.com";
+
+fetch(API + "/products")
+.then(res => res.json())
+.then(data => {
+  data.forEach(p => {
+    products.innerHTML += ``;
+  });
+});
+      <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+        <img src="${p.image}" width="100"><br>
+        <b>${p.name}</b><br>
+        ₹${p.price}<br>
+        ${p.size}
+      </div>
+</script>
+  </body> 
+</html> 
